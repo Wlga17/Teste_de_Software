@@ -36,6 +36,11 @@ public class Ordenador {
 			somaValor = somaValor + Double.parseDouble(valor);
 			colecao.add(valor);
 		}
+		
+		if(pColecao.isEmpty()) {
+			throw new NumberFormatException("Coleção esta vazia");
+		}
+		
 		contador = colecao.size();
 		valorMeio1 = colecao.get((contador / 2) - 1);
 		valorMeio2 = colecao.get((contador / 2));
@@ -52,6 +57,9 @@ public class Ordenador {
 	public void informarValor(String pValor) {
 		if(Double.parseDouble(pValor) > this.maiorValor) {
 			this.maiorValor = Double.parseDouble(pValor);
+		}
+		if(pValor == "") {
+			throw new NumberFormatException("Informe o valor");
 		}
 	}
 	
