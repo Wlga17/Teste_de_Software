@@ -1,4 +1,3 @@
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -140,7 +139,7 @@ public class TesteOrdenador {
 	}
 	
 	@Test(expected=NumberFormatException.class)
-	public void testaMenorValorColecaoComNula() {
+	public void testaMenorValorColecaoComNulo() {
 		//Arrumar
 		Collection<String> col = new ArrayList<String>();
 		col.add("");
@@ -154,4 +153,33 @@ public class TesteOrdenador {
 		assertNotEquals(3, o.getMenorValor());
 	}
 	
+	@Test
+	public void testaValorMedioDaColecao() {
+		//Arrumar
+		Collection<String> col = new ArrayList<String>();
+		col.add("2");
+		col.add("5");
+		col.add("3");
+				
+		//Agir
+		o.inserirColecao(col);
+				
+		//Afirmar
+		assertNotEquals(4, o.getValorMedio());
+	}
+
+	@Test(expected=NumberFormatException.class)
+	public void testaValorMedioDaColecaoComNulo() {
+		//Arrumar
+		Collection<String> col = new ArrayList<String>();
+		col.add("");
+		col.add("5");
+		col.add("3");
+						
+		//Agir
+		o.inserirColecao(col);
+						
+		//Afirmar
+		assertNotEquals(4, o.getValorMedio());
+	}
 }

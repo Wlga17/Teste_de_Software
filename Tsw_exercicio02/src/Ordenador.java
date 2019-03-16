@@ -38,7 +38,7 @@ public class Ordenador {
 		}
 		
 		if(pColecao.isEmpty()) {
-			throw new NumberFormatException("Coleção esta vazia");
+			throw new NumberFormatException("Coleção esta com algum valor vazio");
 		}
 		
 		contador = colecao.size();
