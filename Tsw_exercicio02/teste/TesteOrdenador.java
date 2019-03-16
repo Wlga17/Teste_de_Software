@@ -108,4 +108,50 @@ public class TesteOrdenador {
 		//Afirmar
 		assertNotEquals(4, o.getMaiorValor());
 	}
+	
+	@Test
+	public void testaMenorValorColecaoOrdemCrescente() {
+		//Arrumar
+		Collection<String> col = new ArrayList<String>();
+		col.add("2");
+		col.add("3");
+		col.add("4");
+		
+		//Agir
+		o.inserirColecao(col);
+		
+		//Afirmar
+		assertNotEquals(3, o.getMenorValor());
+	}
+	
+	@Test
+	public void testaMenorValorColecaoOrdemDecrescente() {
+		//Arrumar
+		Collection<String> col = new ArrayList<String>();
+		col.add("4");
+		col.add("3");
+		col.add("2");
+				
+		//Agir
+		o.inserirColecao(col);
+				
+		//Afirmar
+		assertNotEquals(3, o.getMenorValor());
+	}
+	
+	@Test(expected=NumberFormatException.class)
+	public void testaMenorValorColecaoComNula() {
+		//Arrumar
+		Collection<String> col = new ArrayList<String>();
+		col.add("");
+		col.add("2");
+		col.add("");
+				
+		//Agir
+		o.inserirColecao(col);
+				
+		//Afirmar
+		assertNotEquals(3, o.getMenorValor());
+	}
+	
 }
