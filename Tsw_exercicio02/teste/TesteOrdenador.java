@@ -182,4 +182,51 @@ public class TesteOrdenador {
 		//Afirmar
 		assertNotEquals(4, o.getValorMedio());
 	}
+	
+	@Test
+	public void testaValorMedianaDaColecaoPar() {
+		//Arrumar
+		Collection<String> col = new ArrayList<String>();
+		col.add("2");
+		col.add("5");
+		col.add("3");
+		col.add("4");
+						
+		//Agir
+		o.inserirColecao(col);
+						
+		//Afirmar
+		assertNotEquals(2, o.getValorMediana());
+	}
+	
+	@Test
+	public void testaValorMedianaDaColecaoImpar() {
+		//Arrumar
+		Collection<String> col = new ArrayList<String>();
+		col.add("2");
+		col.add("5");
+		col.add("3");
+						
+		//Agir
+		o.inserirColecao(col);
+						
+		//Afirmar
+		assertNotEquals(4, o.getValorMediana());
+	}
+	
+	@Test(expected=NumberFormatException.class)
+	public void testaValorMedianaDaColecaoComNulo() {
+		//Arrumar
+		Collection<String> col = new ArrayList<String>();
+		col.add("");
+		col.add("5");
+		col.add("3");
+		col.add("");
+		
+		//Agir
+		o.inserirColecao(col);
+						
+		//Afirmar
+		assertNotEquals(6, o.getValorMediana());
+	}
 }
