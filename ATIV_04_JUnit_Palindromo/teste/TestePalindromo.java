@@ -9,6 +9,7 @@ import org.junit.Test;
 public class TestePalindromo {
 
 	private Palindromo p;
+	private boolean ePalindromo;
 	
 	@Before
 	public void criarObjeto() {
@@ -19,7 +20,6 @@ public class TestePalindromo {
 	public void testaPalindromoComNull() {
 		//Arrumar
 		String txt = "";
-		boolean ePalindromo;
 		
 		//Agir
 		ePalindromo = p.isPalindromo(txt);
@@ -30,10 +30,9 @@ public class TestePalindromo {
 	}
 	
 	@Test
-	public void testaPalindromoTrue() {
+	public void testaPalindromoTrueComTexto() {
 		//Arrumar
 		String txt = "arara";
-		boolean ePalindromo;
 		
 		//Agir
 		ePalindromo = p.isPalindromo(txt);
@@ -44,10 +43,22 @@ public class TestePalindromo {
 	}
 	
 	@Test
-	public void testaPalindromoFalse() {
+	public void testaPalindromoTrueComNumero() {
+		//Arrumar
+		String valor = "11211";
+				
+		//Agir
+		ePalindromo = p.isPalindromo(valor);
+						
+		//Afirmar
+		assertTrue(ePalindromo);
+		assertNotNull(valor);
+	}
+	
+	@Test
+	public void testaPalindromoFalseComTexto() {
 		//Arrumar
 		String txt = "girafa";
-		boolean ePalindromo;
 		
 		//Agir
 		ePalindromo = p.isPalindromo(txt);
@@ -56,4 +67,18 @@ public class TestePalindromo {
 		assertFalse(ePalindromo);
 		assertNotNull(txt);
 	}
+	
+	@Test
+	public void testaPalindromoFalseComNumero() {
+		//Arrumar
+		String valor = "11231";
+				
+		//Agir
+		ePalindromo = p.isPalindromo(valor);
+						
+		//Afirmar
+		assertFalse(ePalindromo);
+		assertNotNull(valor);
+	}
+	
 }
