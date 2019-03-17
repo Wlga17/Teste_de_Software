@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
@@ -18,35 +19,41 @@ public class TestePalindromo {
 	public void testaPalindromoComNull() {
 		//Arrumar
 		String txt = "";
+		boolean ePalindromo;
 		
 		//Agir
-		p.isPalindromo(txt);
+		ePalindromo = p.isPalindromo(txt);
 		
 		//Afirmar
+		assertFalse(ePalindromo);
 		assertNull(txt);
 	}
 	
 	@Test
 	public void testaPalindromoTrue() {
 		//Arrumar
-		String txt = "Arara";
-				
+		String txt = "arara";
+		boolean ePalindromo;
+		
 		//Agir
-		p.isPalindromo(txt);
+		ePalindromo = p.isPalindromo(txt);
 				
 		//Afirmar
-		assertTrue(true);
+		assertTrue(ePalindromo);
+		assertNotNull(txt);
 	}
 	
 	@Test
 	public void testaPalindromoFalse() {
 		//Arrumar
-		String txt = "Girafa";
-				
+		String txt = "girafa";
+		boolean ePalindromo;
+		
 		//Agir
-		p.isPalindromo(txt);
+		ePalindromo = p.isPalindromo(txt);
 				
 		//Afirmar
-		assertFalse(false);
+		assertFalse(ePalindromo);
+		assertNotNull(txt);
 	}
 }
