@@ -26,7 +26,7 @@ public class TestePalindromo {
 		
 		//Afirmar
 		assertFalse(ePalindromo);
-		assertNull(txt);
+		assertNull(ePalindromo);
 	}
 	
 	@Test
@@ -39,7 +39,7 @@ public class TestePalindromo {
 				
 		//Afirmar
 		assertTrue(ePalindromo);
-		assertNotNull(txt);
+		assertNotNull(ePalindromo);
 	}
 	
 	@Test
@@ -52,7 +52,7 @@ public class TestePalindromo {
 						
 		//Afirmar
 		assertTrue(ePalindromo);
-		assertNotNull(valor);
+		assertNotNull(ePalindromo);
 	}
 	
 	@Test
@@ -65,7 +65,7 @@ public class TestePalindromo {
 				
 		//Afirmar
 		assertFalse(ePalindromo);
-		assertNotNull(txt);
+		assertNotNull(ePalindromo);
 	}
 	
 	@Test
@@ -78,7 +78,7 @@ public class TestePalindromo {
 						
 		//Afirmar
 		assertFalse(ePalindromo);
-		assertNotNull(valor);
+		assertNotNull(ePalindromo);
 	}
 	
 }
