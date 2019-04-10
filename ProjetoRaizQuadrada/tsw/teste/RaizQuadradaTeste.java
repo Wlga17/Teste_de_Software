@@ -59,9 +59,9 @@ public class RaizQuadradaTeste {
 	}
 	
 	@Test(expected=NumberFormatException.class)
-	public void raizQuadradaComLetrasTest() {
+	public void raizQuadradaComNomeTest() {
 		//Arrumar
-		String numero = "ola";
+		String numero = "nove";
 		double valorEsperado = 5;
 				
 		//Agir
